@@ -6,17 +6,21 @@ spring:
   profiles: dev
   datasource:
     name: test
-    url: jdbc:mysql://127.0.0.1:3306/test
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=GMT%2B8
     username: root
-    password: 123456
-    driver-class-name: com.mysql.jdbc.Driver
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+logging:
+  level:
+    org.springframework: info
+    org.spring.springboot.dao: debug
 
 server:
   port: 18080
 
 mybatis:
   type-aliases-package: com.zzq.pro.model
-  mapper-locations: classpath:mapper/*.xml
 
 ---
 spring:
